@@ -1,0 +1,10 @@
+name: 'modern_dbt'
+version: '1.0'
+profile: 'default'
+
+models:
+  modern_dbt:
+    staging:
+      materialized: view
+    marts:
+      materialized: table

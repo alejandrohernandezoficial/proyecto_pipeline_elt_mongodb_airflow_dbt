@@ -1,0 +1,37 @@
+--inertar_datos
+
+Bash
+docker exec -it mongodb mongosh
+
+--JavaSctipt
+
+use ecommerce
+
+db.events.insertMany([
+  { user_id: 1, event_type: "purchase", amount: 100 },
+  { user_id: 1, event_type: "purchase", amount: 200 },
+  { user_id: 2, event_type: "purchase", amount: 150 }
+])
+
+
+
+
+
+--Esto Corre TODO
+
+docker-compose up -d
+
+Airflow: 👉 http://localhost:8080⁠�
+(admin / admin)
+Activa DAG: modern_elt_pipeline
+
+
+
+
+--RESULTADO FINAL (en Postgres)
+
+SELECT * FROM fact_user_spending;
+
+user_id,total_spent
+1,300
+2,150
